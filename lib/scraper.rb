@@ -1,4 +1,21 @@
 require 'nokogiri'
 require 'open-uri'
 
-html = open("https://flatironschool.com/")
+# # html = open("https://flatironschool.com/")
+# doc = Nokogiri::HTML(open("http://flatironschool.com/"))
+# # doc.css(".headline-26OIBN")
+# doc.css(".headline-26OIBN").text
+
+html = open("http://flatironschool.com/")
+doc = Nokogiri::HTML(html)
+doc.css(".inlineMobileLeft-2Yo002.imageTextBlockGrid2-3jXtmC")
+
+courses.each do |course|
+    puts course.text.strip
+  end
+
+#   XML
+# p doc.css(".inlineMobileLeft-2Yo002.imageTextBlockGrid2-3jXtmC")[0]
+
+# p doc.css(".inlineMobileLeft-2Yo002.imageTextBlockGrid2-3jXtmC")[0].name
+# # => "div"
